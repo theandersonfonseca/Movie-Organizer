@@ -1,2 +1,157 @@
 @use 'base' as *;
 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  padding: 1.5rem;
+  font-size: 4.5rem;
+  color: $clr-white;
+  font-family: 'Lobster', cursive;
+  letter-spacing: .5rem;
+
+  @include for-size(phone-only) {
+    font-size: 3.5rem;
+  }
+}
+
+.nav,
+.menu {
+  display: flex;
+}
+
+.nav {
+  align-items: center;
+  margin-top: 3rem;
+
+  @include for-size(phone-only) {
+    flex-direction: column;
+  }
+}
+
+.menu {
+  padding: .8rem 0;
+  
+  &__item:not(:first-child) {
+    margin-left: 2rem;
+
+    @include for-size(phone-only) {
+      margin-left: 0;
+    }
+
+    @include for-size(tablet-portrait-up) {
+      margin-left: 3rem;
+    }
+  }
+
+  &__link {
+    padding: 1rem;
+    color: $clr-white;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: .4s;
+
+    &:hover,
+    &--selected {
+      color: $clr-green;
+    }
+  }
+}
+
+.search {
+  display: flex;
+  margin-left: 4rem;
+  border-bottom: solid .1rem $clr-gray-light;
+
+  @include for-size(phone-only) {
+    margin-top: 3rem;
+  }
+
+  @include for-size(tablet-landscape-up) {
+    margin-left: 6rem;
+  }
+
+  &__input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: .8rem 1rem;
+    color: $clr-white;
+    width: 14rem;
+    max-width: 100%;
+  }
+}
+
+.card {
+  width: 22rem;
+  height: 33rem;
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: .4rem;
+  overflow: hidden;
+  border: solid .2rem transparent;
+
+  &__image {
+    flex: 1;
+    height: auto;
+  }
+
+  &__buttons {
+    display: none;
+    justify-content: center;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $clr-dark;
+    border-radius: 4rem;
+  }
+
+  &__button {
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 2rem;
+    color: $clr-gray-dark;
+    transition: .4s;
+    cursor: pointer;
+
+    &--selected {
+      color: $clr-green;
+    }
+  }
+
+  &__button:not(:first-child) {
+    margin-left: .5rem;
+  }
+
+  &:hover {
+    .card__buttons {
+      display: flex;
+    }
+
+    border: solid .2rem $clr-green;
+  }
+
+  &__icon {
+    pointer-events: none;
+  }
+}
+
+.alert {
+  display: none;
+  font-size: 1.4rem;
+  color: $clr-white;
+
+  &--show {
+    display: block;
+  }
+}

@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Organizador de Filmes</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -12,5 +14,25 @@
     />
   </head>
   <body>
+    <header class="header">
+      <h1 class="title">Organizador de Filmes</h1>
+
+      <nav class="nav">
+        <ul class="menu" data-menu>
+          <li class="menu__item"><a href="#" class="menu__link menu__link--selected" data-link="home">Home</a></li>
+          <li class="menu__item"><a href="#" class="menu__link" data-link="watched">Já Vi</a></li>
+          <li class="menu__item"><a href="#" class="menu__link" data-link="watchlist">Quero Ver</a></li>
+          <li class="menu__item"><a href="#" class="menu__link" data-link="favorites">Favoritos</a></li>
+        </ul>
+
+        <form class="search" data-search>
+          <input class="search__input" type="text" placeholder="Procurar..." data-input>
+        </form>
+      </nav>
+    </header>
+
+    <div class="container" data-container>
+      <span class="alert" data-alert>Nenhum filme encontrado...</span>
+    </div>
   </body>
 </html>

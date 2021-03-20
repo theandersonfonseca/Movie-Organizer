@@ -1,2 +1,31 @@
 @use 'base' as *;
 
+body {
+  background: $clr-dark;
+  overflow-x: hidden;
+  padding: 0 1.5rem;
+}
+
+.container {
+  max-width: 100%;
+  margin: 6rem auto 0;
+  display: grid;
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+
+  @include for-size(tablet-portrait-up) {
+    width: 72rem;
+    grid-template-columns: repeat( auto-fit, minmax(22rem, 1fr));
+  }
+
+  @include for-size(tablet-landscape-up) {
+    width: 99rem;
+    grid-template-columns: repeat( auto-fit, minmax(22rem, 1fr));
+  }
+
+  @include for-size(desktop-up) {
+    width: 120rem;
+    grid-template-columns: repeat( auto-fit, minmax(22rem, 1fr));
+  }
+}
+
