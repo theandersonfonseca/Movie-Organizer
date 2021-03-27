@@ -25,7 +25,7 @@ class SelectedMovies {
     this.saveInLocalStorage();
   }
 
-  checkMovieStatus(id, property) {
+  checkMovieState(id, property) {
     const movie = this.movies.find((movie) => movie.id === id);
 
     if (!movie) return false;

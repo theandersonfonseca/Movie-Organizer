@@ -13,9 +13,9 @@ const POPULAR_MOVIES = `https://api.themoviedb.org/3/movie/popular?api_key=${pro
 const returnMovieObject = (id, poster_path) => ({
   id,
   poster: poster_path,
-  watched: MySelectedMovies.checkMovieStatus(id, 'watched'),
-  watchlist: MySelectedMovies.checkMovieStatus(id, 'watchlist'),
-  favorite: MySelectedMovies.checkMovieStatus(id, 'favorite'),
+  watched: MySelectedMovies.checkMovieState(id, 'watched'),
+  watchlist: MySelectedMovies.checkMovieState(id, 'watchlist'),
+  favorite: MySelectedMovies.checkMovieState(id, 'favorite'),
 });
 
 const pushMovieToMySelectedMovies = ({ id, poster_path }) => {
